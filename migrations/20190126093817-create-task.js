@@ -40,7 +40,7 @@ module.exports = {
       },
       status: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false 
       },
       driverComment: {
         type: Sequelize.STRING

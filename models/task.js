@@ -9,8 +9,12 @@ module.exports = (sequelize, DataTypes) => {
     driverName: DataTypes.STRING,
     courier: DataTypes.STRING,
     description: DataTypes.STRING,
-    status: DataTypes.STRING,
-    driverComment: DataTypes.STRING,
+    status: {
+      type: DataTypes.STRING,
+      validate: {
+        isIn: ['completed', 'failed', 'pending', 'started']
+      }
+    }
   }, {
     scopes: {
       dateSorted(dir = 'ASC') {
