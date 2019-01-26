@@ -38,7 +38,7 @@ app.use((err, req, res, next) => {
         code: err.code,
         status: 'error',
         message: err.message,
-        errors: err.errors ? err.errors : []
+        errors: err.errors ? err.errors : [err.message]
     })
 })
 
